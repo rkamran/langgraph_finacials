@@ -1,5 +1,3 @@
-from ast import Dict
-from typing import TypedDict, List
 from langchain.tools import tool
 from langchain_core.language_models import BaseChatModel
 from langchain.chat_models import init_chat_model
@@ -35,7 +33,7 @@ def get_financial_data(ticker: str, quarter='2025Q1') -> Dict:
         quarter: Fiscal quarter in the format YYYYQX
 
     """
-    logger.info(f"Executing  {get_company_info}")
+    logger.info(f"Executing  {get_financial_data}")
 
     # First check if we have it in cache?
     cache_key = f"{ticker}_{quarter}"
@@ -83,7 +81,7 @@ def get_llm(model_name: str, temperature: float = 0) -> BaseChatModel:
     return init_chat_model(
         model=f"ollama:{model_name}", 
         base_url=f'{os.getenv("OLLAMA_BASE_URL")}', 
-        temprature=temperature
+        temperature=temperature
     )
 
 

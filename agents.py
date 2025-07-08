@@ -93,22 +93,6 @@ def sentiment_analysis_agent(state: FinancialReportState):
     return {"sentiments": response.sentiments}
 
 
-# k_report_writer_agent = "report_writer_agent"
-# def report_writer_agent(state: FinancialReportState):
-#     logger.info(f"Running {sys._getframe(0).f_code.co_name}")
-#     pipeline = report_writer_prompt | llm
-#     response = pipeline.invoke({
-#         "company": state.get("company_info").get("company_name"),
-#         "related_news": state.get("related_news"),
-#         "sentiments": state.get("sentiments"),
-#         "company_info": state.get("company_info"),
-#         "financial_data": state.get("financial_data")
-#     })
-#
-#
-#     return {"final_report": response.content}
-
-
 k_report_writer_agent = "report_writer_agent"
 def report_writer_agent(state: FinancialReportState):
     logger.info(f"Running {sys._getframe(0).f_code.co_name}")
