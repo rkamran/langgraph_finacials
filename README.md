@@ -1,4 +1,3 @@
-Of course. Here is the first problem.
 
 ### Problem 1: Multi-Agent Financial Research Assistant
 
